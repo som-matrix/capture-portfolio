@@ -1,6 +1,8 @@
 import React from 'react'
 // Import Styled Components
 import styled from 'styled-components';
+// Import the necesaary styled components from styles.js
+import {StyledDescription,StyledTitle,StyledImage} from '../Styles';
 import home1 from '../img/home1.png';
 function Aboutsection() {
     return (
@@ -26,27 +28,7 @@ function Aboutsection() {
 }
 
 // Styling the components
-const StyledDescription = styled.div`
- min-height:90vh;
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:5rem 10rem;
-`
-const StyledTitle = styled.div`
-flex:1;
-padding-right:5rem;
-`
-const StyledImage = styled.div`
-/* flex:1; */
-overflow:hidden;
 
-/* img{
-    width:100%;
-    height:80vh;
-    object-fit:cover;
-} */
-`
 const StyledHide = styled.div`
 overflow:hidden;
 `

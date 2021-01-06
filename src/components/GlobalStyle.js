@@ -10,20 +10,21 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background-color:#1b1b1b;
+    font-family: 'Inter', sans-serif;
 }
 h2{
     font-size:4rem;
-    font-weight:lighter;
+    font-weight:400;
     color:white;
 }
 span{
     font-size:4rem;
-    font-weight:bold;
+    font-weight:700;
     color:#62da97;
 }
 h3{
     font-size:2.5rem;
-    font-weight:bold;
+    font-weight:700;
     color:white;
 }
 p{
@@ -39,8 +40,9 @@ button{
     border: 2px solid #62da97;
     color:white;
     font-size:1rem;
-    font-weight:bold;
+    font-weight:700;
     transition:all .5s ease;
+    cursor: pointer;
     &:hover{
         background-color:#62da97;
         color:white;
