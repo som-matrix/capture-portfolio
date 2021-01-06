@@ -6,15 +6,15 @@ function Aboutsection() {
     return (
         <StyledDescription>
             <StyledTitle>
-                <div className="hide">
+                <StyledHide>
                     <h2>We work to make</h2>
-                </div>
-                <div className="hide">
+                </StyledHide>
+                <StyledHide>
                     <h2>your <span>dream</span> come</h2>
-                </div>
-                <div className="hide">
+                </StyledHide>
+                <StyledHide>
                     <h2>true.</h2>
-                </div>
+                </StyledHide>
                 <p>Contact us for any photography or videography ideas that you have. We have professionals with amazing skills.</p>
                 <button>Contact Us</button>
             </StyledTitle>
@@ -46,5 +46,8 @@ overflow:hidden;
     height:80vh;
     object-fit:cover;
 } */
+`
+const StyledHide = styled.div`
+overflow:hidden;
 `
 export default Aboutsection
