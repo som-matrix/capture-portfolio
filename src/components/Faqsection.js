@@ -1,42 +1,41 @@
 import React from 'react'
 import styled from 'styled-components';
 import {StyledDescription} from '../Styles';
+import Toggle from './Toggle';
+import {AnimateSharedLayout} from 'framer-motion'
+import {useScroll} from './useSroll';
+import {scrollReveal} from '../Animation';
 function Faqsection() {
+    const [element,controls] = useScroll();
     return (
-        <StyledFaq>
+        <StyledFaq variants={scrollReveal} ref={element} animate={controls} initial="hidden">
             <h2>Any Questions <span>FAQ</span></h2>
-            <div className="question">
-                <h3>How do i start</h3>
+            <AnimateSharedLayout>
+             <Toggle title='How do i start'>
                 <div className="answers">
                     <p>Lorem ipsum dolor sit amet.</p>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, unde!</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h3>Daily Schedule</h3>
+             </Toggle>
+             <Toggle title='Daily Schedule'>
                 <div className="answers">
                     <p>Lorem ipsum dolor sit amet.</p>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, unde!</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h3>Diffrent Payment Methods</h3>
+             </Toggle>
+             <Toggle title='Diffrent Payment Methods'>
+                 <div className="answers">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, unde!</p>
+                 </div>
+             </Toggle>
+             <Toggle title='What Products do you offer'>
                 <div className="answers">
                     <p>Lorem ipsum dolor sit amet.</p>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, unde!</p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h3>What Products do you offer</h3>
-                <div className="answers">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, unde!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+             </Toggle>
+            </AnimateSharedLayout>
         </StyledFaq>
     )
 }
@@ -50,7 +49,9 @@ const StyledFaq = styled(StyledDescription)`
  }
  .question{
      padding:2rem 0rem;
-
+     h3{
+         cursor:pointer;
+     }
      .answers{
        padding: 2rem 0;
          p{

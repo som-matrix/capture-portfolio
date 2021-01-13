@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
 import {MovieState} from '../movieState';
+import {motion} from 'framer-motion';
+import {pageAnimation} from '../Animation';
 function MovieDetails() {
     const history = useHistory();
     const url = history.location.pathname // this is the exact url 
@@ -18,7 +20,7 @@ function MovieDetails() {
         // Check 
         <>
          {currentMovie && (
-            <StyledDetails>
+            <StyledDetails variants={pageAnimation} animate="show" initial="hidden" exit="exit">
               <StyledHeadline>
                 <h1>{currentMovie.title}</h1>  
               </StyledHeadline>
@@ -39,7 +41,7 @@ function MovieDetails() {
     )
 }
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
  min-height:90vh;
  /* padding-bottom:10rem; */
 `
@@ -70,6 +72,10 @@ const StyledAwards = styled.div`
  justify-content:space-around;
  align-items:center;
  margin:5rem 10rem;
+ @media (max-width: 1500px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `
 const StyledAward = styled.div`
  padding:5rem;

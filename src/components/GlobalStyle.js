@@ -7,10 +7,15 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing:border-box;
 }
-
+@media screen and (max-width:1700px){
+    html{
+        font-size:75%;
+    }
+}
 body{
     background-color:#1b1b1b;
     font-family: 'Inter', sans-serif;
+    overflow-x:hidden;
 }
 h2{
     font-size:4rem;
@@ -48,7 +53,6 @@ button{
         color:white;
     }
 }
-
 `
 
 export default GlobalStyle;

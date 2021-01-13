@@ -8,9 +8,12 @@ import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
+import {useScroll} from './useSroll';
+import {scrollReveal} from '../Animation';
 function Servicesection() {
+   const [element,controls] = useScroll();
     return (
-        <StyledServices>
+        <StyledServices variants={scrollReveal} ref={element} animate={controls} initial="hidden">
             <StyledTitle>
                 <div className="details">
                     <h2>High <span>Quality</span>Services.</h2>
@@ -64,12 +67,20 @@ p{
     width:70%;
     padding: 2rem 0rem 4rem 0rem;
 }
+@media (max-width:1410px){
+  display:block;
+  text-align:center;
+}
 `;
 
 // Cards
 const StyledCards = styled.div`
 display:flex;
 flex-wrap:wrap;
+
+@media (max-width: 1410px) {
+    justify-content: center;
+  }
 `
 // Single Card
 const StyledCard = styled.div`
